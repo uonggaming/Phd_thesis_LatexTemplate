@@ -1,0 +1,38 @@
+\documentclass[12pt]{book} % font point size
+\input{setup/pkgs} % set-up margins fontfamily citestyle
+\graphicspath{{figures/}}
+\input{setup/info.tex} % private info like name/advisors/colleges
+%======================================= abstract/title  =======================================
+\begin{document}
+\doublespacing
+\pagestyle{plain} % page number at bottom
+\frontmatter % makes the pages numbered in lowercase roman
+\input{setup/1abstract}
+\input{setup/2title}
+\input{setup/3copyright}
+\input{setup/4committee}
+\input{setup/acknowledgments.tex}
+\tableofcontents
+
+%=======================================  main chapters =======================================
+\input{setup/format}
+\mainmatter % resets the page number
+
+\input{chapters/chp1}
+\input{chapters/chp2}
+\input{chapters/chp3}
+
+%=======================================  reference  =======================================
+\input{setup/formatRef.tex}
+
+\bibliographystyle{abbrvnat}
+\bibliography{bib/mybib}
+%=======================================  appendix  =======================================
+\input{setup/formatApp}
+
+\input{appendix/app0_table}
+\input{appendix/app1}
+\input{appendix/app2}
+\input{appendix/app3}
+
+\end{document}

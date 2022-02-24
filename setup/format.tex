@@ -1,0 +1,58 @@
+% !Mode:: "TeX:UTF-8" 
+
+% 关于公式的几个定义
+\newcommand{\sumit}{\sum\limits_{i=1}^n\sum\limits_{t=1}^T} 
+\newcommand{\sumitcut}{\sum\limits_{i=1}^n\sum\limits_{t=1}^T} 
+%\newcommand{\sumit}{\sum\limits_{i=1}^N\sum\limits_{t=1}^T} 
+%\newcommand{\sumitcut}{\sum\limits_{i=1}^N\sum\limits_{t=2}^T} 
+% 定理环境格式定义
+\newtheorem{assumption}{Assumption}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proof}{Proof}
+\newtheorem{remark}{Remark}
+
+\numberwithin{assumption}{chapter}% number by chapter
+\numberwithin{theorem}{chapter} 
+\numberwithin{corollary}{chapter}
+\numberwithin{lemma}{chapter}
+\numberwithin{remark}{chapter}
+\numberwithin{proof}{chapter}
+
+%======================================== Header/Footnote=========================================
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Chapter \thechapter}
+\lhead{Section \thesection}
+\fancyfoot[R]{\thepage}
+\fancyfoot[L]{\textit{\dissertationtitle}}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+% 公式跨页设置，公式之前可以换页，公式出现在页面顶部
+\predisplaypenalty=0
+\allowdisplaybreaks[4]
+
+% 章节格式定义
+\setcounter{secnumdepth}{4} \setcounter{tocdepth}{2}
+\titleformat{\section}{}{\thesection}{0.5em}{}
+\titlespacing{\section}{0pt}{3mm}{3mm}
+\titleformat{\subsection}{}{\thesubsection}{0.5em}{}
+\titlespacing{\subsection}{2.13em}{3mm}{3mm}
+
+% 避免宏包 hyperref 和 arydshln 不兼容带来的目录链接失效的问题。
+\def\temp{\relax}
+\let\temp\addcontentsline
+\gdef\addcontentsline{\phantomsection\temp}
+\gdef\hitempty{}
+
+\renewcommand\frontmatter{\cleardoublepage
+	\@mainmatterfalse
+	\pagenumbering{Roman}
+}
+
+\makeatother
+
+
+
