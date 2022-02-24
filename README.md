@@ -2,7 +2,7 @@
 
 2022-02-23
 
-TODO: revise chp3
+This is the dissertation template for My PhD. Feel free to use.
 
 <!-- TOC -->
 
